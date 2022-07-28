@@ -1,3 +1,4 @@
+
 // export style
 export function onLoad() {
 
@@ -33,8 +34,8 @@ const mcPatcher = cumcord.patcher.findAndPatch(
     (header) => cumcord.patcher.before("default", header, (args) => {mcParser(args[0])})
 ); 
 }
-export function onUnload() {
-    let confirmed = await cumcord.ui.modals.showConfirmationModal({
+export async function onUnload() {
+    let confirmed = cumcord.ui.modals.showConfirmationModal({
         header: "Are you sure?",
         content: "This will reload your discord!",
         confirmText: "Reload",
