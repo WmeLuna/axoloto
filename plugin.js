@@ -1,5 +1,5 @@
 // export style
-export function onLoad() {
+export const onLoad = () => {
 
 function mcParser(a) {
     //a.elem = document.querySelector('[aria-labelledby="'+ a["aria-labelledby"] +'"]')
@@ -32,7 +32,7 @@ const mcPatcher = cumcord.patcher.findAndPatch(
 ); 
 }
 
-export function onUnload() {
+export const onUnload = () => {
     let confirmed = await cumcord.ui.modals.showConfirmationModal({
         header: "Are you sure?",
         content: "This will reload your discord!",
