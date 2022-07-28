@@ -1,5 +1,7 @@
-
 // export style
+export function onLoad() {
+
+
 
 function mcParser(a) {
     //a.elem = document.querySelector('[aria-labelledby="'+ a["aria-labelledby"] +'"]')
@@ -30,9 +32,8 @@ const mcPatcher = cumcord.patcher.findAndPatch(
     () => cumcord.modules.webpack.findByDisplayName("Message", false),
     (header) => cumcord.patcher.before("default", header, (args) => {mcParser(args[0])})
 ); 
-
-
-export const onUnload = () => {
+}
+export function onUnload() {
     let confirmed = await cumcord.ui.modals.showConfirmationModal({
         header: "Are you sure?",
         content: "This will reload your discord!",
@@ -41,4 +42,3 @@ export const onUnload = () => {
       });
       if(confirmed){location.href = location.href}
 }
-
