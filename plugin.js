@@ -20,7 +20,7 @@ if (e.message.channel_id == "947615847235592212" && e.message.author.discriminat
     //console.log(e)
 }
 else if (e.message.channel_id == "947615847235592212" && e.message.author.id =="802357456670949427"){
-    e.message.bot = e.message.author.bot = false
+    e.message.bot = e.message.author.bot = true
     a.compact = a.childrenHeader.props.compact = false
     a.className = a.className.replace("compact-2Nkcau","cozyMessage-1DWF9U").replace("-groupStart-3Mlgv1", "groupStart-3Mlgv1")
     let embed = e.message.embeds[0]
@@ -35,7 +35,7 @@ const mcPatcher = cumcord.patcher.findAndPatch(
 ); 
 }
 export async function onUnload() {
-    let confirmed = cumcord.ui.modals.showConfirmationModal({
+    let confirmed = await cumcord.ui.modals.showConfirmationModal({
         header: "Are you sure?",
         content: "This will reload your discord!",
         confirmText: "Reload",
