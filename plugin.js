@@ -1,8 +1,6 @@
-
-// export style
+import cssInject from "./mc.css";
+const uninjectCss = cssInject();
 export function onLoad() {
-
-
 
 function mcParser(a) {
     //a.elem = document.querySelector('[aria-labelledby="'+ a["aria-labelledby"] +'"]')
@@ -35,11 +33,12 @@ const mcPatcher = cumcord.patcher.findAndPatch(
 ); 
 }
 export async function onUnload() {
+    uninjectCss();
     let confirmed = await cumcord.ui.modals.showConfirmationModal({
         header: "Are you sure?",
         content: "This will reload your discord!",
         confirmText: "Reload",
         type: "danger"
       });
-      if(confirmed){location.href = location.href}
+      if(await confirmed){location.href = location.href}
 }
