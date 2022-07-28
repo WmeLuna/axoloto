@@ -1,6 +1,6 @@
 {
   "name": "Axoloto MC Helper",
-  "description": "",
+  "description": "Formats Axoloto's minecraft channel for some slight ui changes",
   "author": "WmeLuna",
   "file": "plugin.js"
 }
