@@ -1,6 +1,5 @@
-(function(){
+
 // export style
-export const onLoad = () => {
 
 function mcParser(a) {
     //a.elem = document.querySelector('[aria-labelledby="'+ a["aria-labelledby"] +'"]')
@@ -31,7 +30,7 @@ const mcPatcher = cumcord.patcher.findAndPatch(
     () => cumcord.modules.webpack.findByDisplayName("Message", false),
     (header) => cumcord.patcher.before("default", header, (args) => {mcParser(args[0])})
 ); 
-}
+
 
 export const onUnload = () => {
     let confirmed = await cumcord.ui.modals.showConfirmationModal({
@@ -42,4 +41,4 @@ export const onUnload = () => {
       });
       if(confirmed){location.href = location.href}
 }
-});
+
