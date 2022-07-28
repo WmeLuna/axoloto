@@ -10,7 +10,7 @@ function mcParser(a) {
 if (e.message.channel_id == "947615847235592212") {
     a.compact = a.childrenHeader.props.compact = true
     a.className = a.className.replace("cozyMessage-1DWF9U","compact-2Nkcau").replace("groupStart-3Mlgv1", "-groupStart-3Mlgv1")
-    console.log(a)
+    //console.log(a)
 }
 if (e.message.channel_id == "947615847235592212" && e.message.author.discriminator == "0000") {
     if (typeof a.childrenHeader.props.author == "object") a.childrenHeader.props.author.colorString = "#9b59b5"
