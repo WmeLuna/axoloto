@@ -25,6 +25,7 @@ jobs:
         run: |
           mkdir .dist
           sperm build --outdir "./.dist"
+          cp mc.css .dist/mc.css
           
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
