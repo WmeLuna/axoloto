@@ -1,3 +1,4 @@
+(function(){
 // export style
 export const onLoad = () => {
 
@@ -41,3 +42,4 @@ export const onUnload = () => {
       });
       if(confirmed){location.href = location.href}
 }
+});
